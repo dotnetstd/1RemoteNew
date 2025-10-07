@@ -791,6 +791,8 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Height="30" MinWidth="80" Margin="5 0 0 0" Content="{DynamicResource Connect}" Command="{Binding CmdConnectSelected}"></Button>
+                    <Button Height="30" MinWidth="80" Margin="5 0 0 0" Content="{DynamicResource SelectAll}" Command="{Binding CmdSelectAllSelection}"></Button>
+                    <Button Height="30" MinWidth="80" Margin="5 0 0 0" Content="{DynamicResource UnSelect}" Command="{Binding CmdUnSelectSelection}"></Button>
                     <Button Height="30" MinWidth="80" Margin="5 0 0 0" Content="{DynamicResource Edit}" Command="{Binding CmdMultiEditSelected}"></Button>
                     <Button Height="30" MinWidth="80" Margin="5 0 0 0" Content="{DynamicResource 'Create desktop shortcut'}" Command="{Binding CmdCreateDesktopShortcut}"></Button>
                     <Button Height="30" MinWidth="80" Margin="5 0 0 0" Content="{DynamicResource Delete}" Command="{Binding CmdDeleteSelected}"></Button>

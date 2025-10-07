@@ -597,6 +597,49 @@ namespace _1RM.View.ServerView
             }
         }
 
+
+        private RelayCommand? _cmdUnSelectSelection;
+        public RelayCommand CmdUnSelectSelection
+        {
+            get
+            {
+                return _cmdUnSelectSelection ??= new RelayCommand((o) =>
+                {
+                    foreach (var vmServerCard in VmServerList)
+                    {
+                        if (vmServerCard.IsVisible)
+                        {
+                            vmServerCard.IsSelected = false;
+                        }
+                    }
+                    RaisePropertyChanged(nameof(IsAnySelected));
+                    RaisePropertyChanged(nameof(IsSelectedAll));
+                    RaisePropertyChanged(nameof(SelectedCount));
+                });
+            }
+        }
+
+        private RelayCommand? _cmdSelectAllSelection;
+        public RelayCommand CmdSelectAllSelection
+        {
+            get
+            {
+                return _cmdSelectAllSelection ??= new RelayCommand((o) =>
+                {
+                    foreach (var vmServerCard in VmServerList)
+                    {
+                        if (vmServerCard.IsVisible)
+                        {
+                            vmServerCard.IsSelected = true;
+                        }
+                    }
+                    RaisePropertyChanged(nameof(IsAnySelected));
+                    RaisePropertyChanged(nameof(IsSelectedAll));
+                    RaisePropertyChanged(nameof(SelectedCount));
+                });
+            }
+        }
+
         #endregion
 
 
